@@ -1,0 +1,100 @@
+.container {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+.stats span {
+    background-color: var(--gray-400);
+    padding: 0.125rem 0.5rem;
+    border-radius: 1rem;
+    margin-left: 0.5rem;
+    color: var(--gray-100);
+}
+
+.stats .createdTasks {
+    color: var(--brand-blue);
+}
+.stats .concludedTasks {
+    color: var(--brand-purple);
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.task {
+    padding: 1rem;
+    background-color: var(--gray-500);
+    border: 1px solid var(--gray-400);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border-radius: 8px;
+}
+
+.task p {
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: var(--gray-300);
+}
+
+.delete {
+    background-color: transparent;
+    border: 0;
+    color: var(--gray-300);
+    cursor: pointer;
+    line-height: 0;
+    padding: 0.125rem;
+    margin-left: auto;
+}
+
+.delete:hover {
+    background-color: var(--gray-400);
+    color: var(--danger);
+    border-radius: 4px;
+}
+
+.check {
+    position: relative;
+    width: 1.1rem;
+    height: 1.1rem;
+    border: 2px solid var(--brand-blue);
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.check svg {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+}
+
+.check:hover {
+    background-color: var(--gray-600);
+    border-color: var(--brand-blue-dark);
+}
+
+.checked {
+    background-color: var(--brand-purple-dark);
+    border-color: var(--brand-purple-dark);
+}
+.checked:hover {
+    background-color: var(--brand-purple);
+    border-color: var(--brand-purple);
+}
