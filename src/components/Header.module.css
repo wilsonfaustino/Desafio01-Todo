@@ -7,3 +7,8 @@
     justify-content: center;
 }
 
+.wrapper img {
+    width: 7.875rem;
+    height: 3rem;
+}
+

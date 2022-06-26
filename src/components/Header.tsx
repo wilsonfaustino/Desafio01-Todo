@@ -1,14 +1,10 @@
 import styles from './Header.module.css'
-import { Logo } from './Logo'
+import Logo from './assets/Logo.svg'
 
-export interface HeaderProps {
-    children?: any
-}
-
-export function Header(props: HeaderProps) {
+export function Header() {
     return (
         <header className={styles.wrapper}>
-            <Logo />
+            <img src={Logo} alt="logo todo" />
         </header>
     )
 }
