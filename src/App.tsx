@@ -1,40 +1,26 @@
-import { useState, useCallback } from 'react'
+import { useState } from 'react'
 
-// styles
 import './App.css'
 
-// components
 import { Header } from './components/Header'
 import { Task, TaskList } from './components/TaskList'
 import { TodoForm } from './components/TodoForm'
 
 function App() {
     const [tasks, setTasks] = useState<Task[]>([])
-    // ---------------------------------------------
-    // Functions
-    const handleAddTask = useCallback(
-        (task: Task) => setTasks([...tasks, task]),
-        [tasks]
-    )
 
-    const handleDeleteTask = useCallback(
-        (id: string) => setTasks(tasks.filter((task) => task.id !== id)),
-        [tasks]
-    )
+    const handleAddTask = (task: Task) => setTasks([...tasks, task])
 
-    const handleCompleteTask = useCallback(
-        (id: string) =>
-            setTasks((prev) =>
-                prev.map((task) =>
-                    task.id === id
-                        ? { ...task, completed: !task.completed }
-                        : task
-                )
-            ),
-        []
-    )
-    // ---------------------------------------------
-    // Render
+    const handleDeleteTask = (id: string) =>
+        setTasks(tasks.filter((task) => task.id !== id))
+
+    const handleCompleteTask = (id: string) =>
+        setTasks((prev) =>
+            prev.map((task) =>
+                task.id === id ? { ...task, completed: !task.completed } : task
+            )
+        )
+
     return (
         <div className="App">
             <Header />
