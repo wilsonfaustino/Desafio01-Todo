@@ -4,7 +4,7 @@
 }
 
 .App .content {
-    max-width: 800px;
+    max-width: 50rem;
     padding: 0 2rem;
     margin: -1.6875rem auto;
 }
