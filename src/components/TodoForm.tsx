@@ -2,7 +2,6 @@ import { FormEvent, useState } from 'react'
 import { nanoid } from 'nanoid'
 import { PlusCircle } from 'phosphor-react'
 
-// styles
 import styles from './TodoForm.module.css'
 import { Task } from './TaskList'
 
@@ -13,15 +12,13 @@ export interface TodoFormProps {
 export function TodoForm(props: TodoFormProps) {
     const [value, setValue] = useState('')
 
-    // ---------------------------------------------
-    // Functions
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         if (value.trim() === '') {
             return
         }
         let id = nanoid()
-        const data = {
+        const data: Task = {
             id,
             title: value,
             completed: false,
@@ -29,8 +26,6 @@ export function TodoForm(props: TodoFormProps) {
         props.onChange(data)
         setValue('')
     }
-    // ---------------------------------------------
-    // Render
 
     return (
         <form onSubmit={handleSubmit} className={styles.addTodo}>
@@ -40,7 +35,7 @@ export function TodoForm(props: TodoFormProps) {
                 onChange={(e) => setValue(e.target.value)}
                 value={value}
             />
-            <button disabled={value === ''}>
+            <button disabled={value.trim() === ''}>
                 Criar <PlusCircle size={20} />
             </button>
         </form>

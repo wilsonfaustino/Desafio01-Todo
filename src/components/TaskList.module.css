@@ -43,6 +43,10 @@
     border-radius: 8px;
 }
 
+.completedTask {
+    border-color: var(--gray-500);
+}
+
 .task p {
     font-size: 0.875rem;
     line-height: 1.4;
@@ -79,7 +83,7 @@
     cursor: pointer;
 }
 
-.check svg {
+.check img {
     position: absolute;
     top: -1px;
     left: -1px;

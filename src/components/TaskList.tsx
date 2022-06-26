@@ -1,10 +1,9 @@
 import { Trash } from 'phosphor-react'
 
-// local imports
 import { CheckIcon } from './CheckIcon'
+import CheckIconSvg from './assets/check-icon.svg'
 import { EmptyList } from './EmptyLIst'
 
-//styles
 import styles from './TaskList.module.css'
 
 export type Task = {
@@ -42,14 +41,18 @@ export function TaskList({ tasks, onComplete, onDelete }: TaskListProps) {
                 {tasks.length === 0 && <EmptyList />}
                 {tasks.length > 0 &&
                     tasks.map((task) => (
-                        <div className={styles.task} key={task.id}>
+                        <div className={`${styles.task} ${
+                            task.completed ? styles.completedTask : ''
+                        }`} key={task.id}>
                             <button
                                 className={`${styles.check} ${
                                     task.completed && styles.checked
                                 }`}
                                 onClick={() => onComplete(task.id)}
                             >
-                                {task.completed && <CheckIcon />}
+                                {task.completed && (
+                                    <img src={CheckIconSvg} />
+                                )}
                             </button>
                             <p
                                 className={`${
